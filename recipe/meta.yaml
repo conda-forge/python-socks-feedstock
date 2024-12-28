@@ -1,5 +1,5 @@
 {% set name = "python-socks" %}
-{% set version = "2.6.0" %}
+{% set version = "2.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 40e50f268c38130eee97d18ddaef8992282df035b9e7afccbf1c5333bd3ba1ef
+  sha256: 9743929aab6ffe0bab640ecfbbee7130af92408ad86e4aa2984789f742f3ec9e
 
 build:
   noarch: python
