@@ -1,0 +1,44 @@
+schema_version: 1
+
+context:
+  name: python-socks
+  version: 2.7.2
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 4c845d4700352bc7e7382f302dfc6baf0af0de34d2a6d70ba356b2539d4dbb62
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - python_socks
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Core proxy (SOCKS4, SOCKS5, HTTP tunneling) functionality for Python
+  license: Apache-2.0
+  license_file:
+    - LICENSE.txt
+  homepage: https://github.com/romis2012/python-socks
+
+extra:
+  recipe-maintainers:
+    - thewchan
