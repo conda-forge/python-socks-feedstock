@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: python-socks
-  version: 2.7.2
+  version: "2.7.3"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 4c845d4700352bc7e7382f302dfc6baf0af0de34d2a6d70ba356b2539d4dbb62
+  sha256: 06f4ae34c5828c96f631872e102425bbf44ad841d65ce68329e8dc1af428c1f1
 
 build:
   number: 0
