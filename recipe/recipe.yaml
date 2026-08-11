@@ -21,7 +21,7 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - setuptools
+    - setuptools >=77.0
   run:
     - python >=${{ python_min }}
 
@@ -30,7 +30,9 @@ tests:
       imports:
         - python_socks
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Core proxy (SOCKS4, SOCKS5, HTTP tunneling) functionality for Python
